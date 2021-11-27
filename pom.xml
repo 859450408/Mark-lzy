@@ -18,6 +18,7 @@
         <module>mark-order</module>
         <module>renren-fast</module>
         <module>renren-generator</module>
+        <module>mark-common</module>
     </modules>
 
 
