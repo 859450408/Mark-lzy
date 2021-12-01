@@ -16,6 +16,7 @@ import com.lzy.common.utils.PageUtils;
 import com.lzy.common.utils.R;
 
 
+
 /**
  * 商品分类积分设置
  *
@@ -33,7 +34,7 @@ public class CategoryBoundsController {
      * 列表
      */
     @RequestMapping("/list")
-    public R list(@RequestParam Map<String, Object> params) {
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = categoryBoundsService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -44,8 +45,8 @@ public class CategoryBoundsController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    public R info(@PathVariable("id") Long id) {
-        CategoryBoundsEntity categoryBounds = categoryBoundsService.getById(id);
+    public R info(@PathVariable("id") Long id){
+		CategoryBoundsEntity categoryBounds = categoryBoundsService.getById(id);
 
         return R.ok().put("categoryBounds", categoryBounds);
     }
@@ -54,8 +55,8 @@ public class CategoryBoundsController {
      * 保存
      */
     @RequestMapping("/save")
-    public R save(@RequestBody CategoryBoundsEntity categoryBounds) {
-        categoryBoundsService.save(categoryBounds);
+    public R save(@RequestBody CategoryBoundsEntity categoryBounds){
+		categoryBoundsService.save(categoryBounds);
 
         return R.ok();
     }
@@ -64,8 +65,8 @@ public class CategoryBoundsController {
      * 修改
      */
     @RequestMapping("/update")
-    public R update(@RequestBody CategoryBoundsEntity categoryBounds) {
-        categoryBoundsService.updateById(categoryBounds);
+    public R update(@RequestBody CategoryBoundsEntity categoryBounds){
+		categoryBoundsService.updateById(categoryBounds);
 
         return R.ok();
     }
@@ -74,8 +75,8 @@ public class CategoryBoundsController {
      * 删除
      */
     @RequestMapping("/delete")
-    public R delete(@RequestBody Long[] ids) {
-        categoryBoundsService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids){
+		categoryBoundsService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

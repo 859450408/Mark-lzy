@@ -16,6 +16,7 @@ import com.lzy.common.utils.PageUtils;
 import com.lzy.common.utils.R;
 
 
+
 /**
  * 支付信息表
  *
@@ -33,7 +34,7 @@ public class PaymentInfoController {
      * 列表
      */
     @RequestMapping("/list")
-    public R list(@RequestParam Map<String, Object> params) {
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = paymentInfoService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -44,8 +45,8 @@ public class PaymentInfoController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    public R info(@PathVariable("id") Long id) {
-        PaymentInfoEntity paymentInfo = paymentInfoService.getById(id);
+    public R info(@PathVariable("id") Long id){
+		PaymentInfoEntity paymentInfo = paymentInfoService.getById(id);
 
         return R.ok().put("paymentInfo", paymentInfo);
     }
@@ -54,8 +55,8 @@ public class PaymentInfoController {
      * 保存
      */
     @RequestMapping("/save")
-    public R save(@RequestBody PaymentInfoEntity paymentInfo) {
-        paymentInfoService.save(paymentInfo);
+    public R save(@RequestBody PaymentInfoEntity paymentInfo){
+		paymentInfoService.save(paymentInfo);
 
         return R.ok();
     }
@@ -64,8 +65,8 @@ public class PaymentInfoController {
      * 修改
      */
     @RequestMapping("/update")
-    public R update(@RequestBody PaymentInfoEntity paymentInfo) {
-        paymentInfoService.updateById(paymentInfo);
+    public R update(@RequestBody PaymentInfoEntity paymentInfo){
+		paymentInfoService.updateById(paymentInfo);
 
         return R.ok();
     }
@@ -74,8 +75,8 @@ public class PaymentInfoController {
      * 删除
      */
     @RequestMapping("/delete")
-    public R delete(@RequestBody Long[] ids) {
-        paymentInfoService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids){
+		paymentInfoService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

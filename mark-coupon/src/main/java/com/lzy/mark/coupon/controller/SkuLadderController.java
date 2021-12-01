@@ -16,6 +16,7 @@ import com.lzy.common.utils.PageUtils;
 import com.lzy.common.utils.R;
 
 
+
 /**
  * 商品阶梯价格
  *
@@ -33,7 +34,7 @@ public class SkuLadderController {
      * 列表
      */
     @RequestMapping("/list")
-    public R list(@RequestParam Map<String, Object> params) {
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = skuLadderService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -44,8 +45,8 @@ public class SkuLadderController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    public R info(@PathVariable("id") Long id) {
-        SkuLadderEntity skuLadder = skuLadderService.getById(id);
+    public R info(@PathVariable("id") Long id){
+		SkuLadderEntity skuLadder = skuLadderService.getById(id);
 
         return R.ok().put("skuLadder", skuLadder);
     }
@@ -54,8 +55,8 @@ public class SkuLadderController {
      * 保存
      */
     @RequestMapping("/save")
-    public R save(@RequestBody SkuLadderEntity skuLadder) {
-        skuLadderService.save(skuLadder);
+    public R save(@RequestBody SkuLadderEntity skuLadder){
+		skuLadderService.save(skuLadder);
 
         return R.ok();
     }
@@ -64,8 +65,8 @@ public class SkuLadderController {
      * 修改
      */
     @RequestMapping("/update")
-    public R update(@RequestBody SkuLadderEntity skuLadder) {
-        skuLadderService.updateById(skuLadder);
+    public R update(@RequestBody SkuLadderEntity skuLadder){
+		skuLadderService.updateById(skuLadder);
 
         return R.ok();
     }
@@ -74,8 +75,8 @@ public class SkuLadderController {
      * 删除
      */
     @RequestMapping("/delete")
-    public R delete(@RequestBody Long[] ids) {
-        skuLadderService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids){
+		skuLadderService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

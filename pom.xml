@@ -17,7 +17,7 @@
         <module>mark-member</module>
         <module>mark-order</module>
         <module>renren-fast</module>
-        <module>mark-gateway</module>
+        <module>renren-generator</module>
         <module>mark-common</module>
     </modules>
 
