@@ -17,6 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 class MarkProductApplicationTests {
     @Autowired
     BrandService brandService;
+
     @Test
     void contextLoads() {
         BrandEntity brandEntity = new BrandEntity();

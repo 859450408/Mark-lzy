@@ -3,7 +3,7 @@
 
 <mapper namespace="com.lzy.mark.coupon.dao.CategoryBoundsDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
+    <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.lzy.mark.coupon.entity.CategoryBoundsEntity" id="categoryBoundsMap">
         <result property="id" column="id"/>
         <result property="categoryId" column="category_id"/>

@@ -16,7 +16,6 @@ import com.lzy.common.utils.PageUtils;
 import com.lzy.common.utils.R;
 
 
-
 /**
  * 商品sku积分设置
  *
@@ -34,7 +33,7 @@ public class SkuBoundsController {
      * 列表
      */
     @RequestMapping("/list")
-    public R list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = skuBoundsService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -45,8 +44,8 @@ public class SkuBoundsController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    public R info(@PathVariable("id") Long id){
-		SkuBoundsEntity skuBounds = skuBoundsService.getById(id);
+    public R info(@PathVariable("id") Long id) {
+        SkuBoundsEntity skuBounds = skuBoundsService.getById(id);
 
         return R.ok().put("skuBounds", skuBounds);
     }
@@ -55,8 +54,8 @@ public class SkuBoundsController {
      * 保存
      */
     @RequestMapping("/save")
-    public R save(@RequestBody SkuBoundsEntity skuBounds){
-		skuBoundsService.save(skuBounds);
+    public R save(@RequestBody SkuBoundsEntity skuBounds) {
+        skuBoundsService.save(skuBounds);
 
         return R.ok();
     }
@@ -65,8 +64,8 @@ public class SkuBoundsController {
      * 修改
      */
     @RequestMapping("/update")
-    public R update(@RequestBody SkuBoundsEntity skuBounds){
-		skuBoundsService.updateById(skuBounds);
+    public R update(@RequestBody SkuBoundsEntity skuBounds) {
+        skuBoundsService.updateById(skuBounds);
 
         return R.ok();
     }
@@ -75,8 +74,8 @@ public class SkuBoundsController {
      * 删除
      */
     @RequestMapping("/delete")
-    public R delete(@RequestBody Long[] ids){
-		skuBoundsService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids) {
+        skuBoundsService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
