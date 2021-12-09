@@ -2,12 +2,80 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: baidu_route
-          uri: http://www.baidu.com
+        - id: product_route
+          uri: lb://mark-product
           predicates:
-            - Query=url,baidu
+            - Path=/api/markproduct/**
+          filters:
+            - RewritePath= /api/(?<segment>.*),/$\{segment}
 
-        - id: test_route
-          uri: http://www.qq.com
+        - id: coupon_route
+          uri: lb://mark-coupon
           predicates:
-            - Query=url,qq
+            - Path=/api/coupon/**
+          filters:
+            - RewritePath= /api/(?<segment>.*),/$\{segment}
+
+        - id: third_party_route
+          uri: lb://mark-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath= /api/thirdparty/(?<segment>.*),/$\{segment}
+
+        - id: member_route
+          uri: lb://mark-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath= /api/(?<segment>.*),/$\{segment}
+
+        - id: ware_route
+          uri: lb://mark-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath= /api/(?<segment>.*),/$\{segment}
+
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath= /api/(?<segment>.*),/renren-fast/$\{segment}
+
+        - id: mark_host_route
+          uri: lb://mark-product
+          predicates:
+            - Host=mark.com,item.mark.com
+
+        - id: mark_auth_route
+          uri: lb://mark-auth-server
+          predicates:
+            - Host=auth.mark.com
+
+        - id: mark_cart_route
+          uri: lb://mark-cart
+          predicates:
+            - Host=cart.mark.com
+
+        - id: mark_order_route
+          uri: lb://mark-order
+          predicates:
+            - Host=order.mark.com
+
+        - id: mark_member_route
+          uri: lb://mark-member
+          predicates:
+            - Host=member.mark.com
+
+        - id: mark_search_route
+          uri: lb://mark-search
+          predicates:
+            - Host=search.mark.com
+
+        - id: mark_seckill_route
+          uri: lb://mark-seckill
+          predicates:
+            - Host=seckill.mark.com
+

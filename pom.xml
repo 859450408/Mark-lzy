@@ -19,6 +19,7 @@
         <module>renren-fast</module>
         <module>mark-gateway</module>
         <module>mark-common</module>
+        <module>mark-third-party</module>
     </modules>
 
 

@@ -67,7 +67,7 @@ public class BrandController {
     public R update(@RequestBody BrandEntity brand) {
         brandService.updateById(brand);
 
-        return R.ok();
+        return R.ok().put("name", brand.getName());
     }
 
     /**

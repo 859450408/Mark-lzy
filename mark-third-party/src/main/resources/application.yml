@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    alicloud:
+      access-key: LTAI5t7KmmhEaW4fSCDfTRHB
+      secret-key: UBzFSLPUT78EfFfMl9JYmAl1orureP
+
+      oss:
+        bucket: mark-lzy
+        endpoint: oss-cn-beijing.aliyuncs.com
