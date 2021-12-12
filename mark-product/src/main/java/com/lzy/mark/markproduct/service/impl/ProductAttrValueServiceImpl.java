@@ -2,6 +2,7 @@ package com.lzy.mark.markproduct.service.impl;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -27,5 +28,21 @@ public class ProductAttrValueServiceImpl extends ServiceImpl<ProductAttrValueDao
 
         return new PageUtils(page);
     }
+
+    @Override
+    public List<ProductAttrValueEntity> baseAttrListforspu(Long spuId) {
+
+        List<ProductAttrValueEntity> attrValueEntityList = this.baseMapper.selectList(
+                new QueryWrapper<ProductAttrValueEntity>().eq("spu_id", spuId));
+
+        return attrValueEntityList;
+    }
+
+    @Override
+    public void saveProductAttr(List<ProductAttrValueEntity> collect) {
+        this.saveBatch(collect);
+    }
+
+
 
 }

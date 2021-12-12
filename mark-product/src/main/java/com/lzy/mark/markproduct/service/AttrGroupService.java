@@ -3,7 +3,9 @@ package com.lzy.mark.markproduct.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lzy.common.utils.PageUtils;
 import com.lzy.mark.markproduct.entity.AttrGroupEntity;
+import com.lzy.mark.markproduct.vo.AttrGroupWithAttrsVo;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -20,6 +22,6 @@ public interface AttrGroupService extends IService<AttrGroupEntity> {
     PageUtils queryPage(Map<String, Object> params, long catelogId);
 
 
-
+    List<AttrGroupWithAttrsVo> getAttrGroupWithAttrsByCatelogId(Long catelogId);
 }
 

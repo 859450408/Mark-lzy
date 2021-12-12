@@ -3,7 +3,9 @@ package com.lzy.mark.markproduct.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.lzy.common.valid.AddGroup;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,13 +52,10 @@ public class BrandController {
         return R.ok().put("brand", brand);
     }
 
-    /**
-     * 保存
-     */
     @RequestMapping("/save")
-    public R save(@RequestBody BrandEntity brand) {
+    //@RequiresPermissions("product:brand:save")
+    public R save(@Validated({AddGroup.class}) @RequestBody BrandEntity brand){
         brandService.save(brand);
-
         return R.ok();
     }
 
@@ -74,10 +73,12 @@ public class BrandController {
      * 删除
      */
     @RequestMapping("/delete")
+//@RequiresPermissions("${moduleNamez}:brand:delete")
     public R delete(@RequestBody Long[] brandIds) {
         brandService.removeByIds(Arrays.asList(brandIds));
 
         return R.ok();
     }
+
 
 }

@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /*
  * 1.整合MyBatis-Plus
@@ -16,6 +17,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *               a.使用@MapperScan
  *
  * */
+@EnableFeignClients(basePackages = "com.lzy.mark.markproduct.feign")
 @MapperScan("com.lzy.mark.markproduct.dao")
 @SpringBootApplication
 public class MarkProductApplication {
